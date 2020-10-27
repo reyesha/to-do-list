@@ -7,6 +7,7 @@ class TodoGenerator extends Component {
         const text = event.target.todoInput.value;
         const id = uuidv4();
         const todo = { id: id, text: text};
+        event.target.todoInput.value = '';
 
         
         this.props.addTodo(todo);
