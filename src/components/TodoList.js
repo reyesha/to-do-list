@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import TodoGenerator from './TodoGenerator';
-import TodoGroup from './TodoGroup';
 import TodoGroupContainer from '../containers/TodoGroupContainer';
 import TodoGeneratorContainer from '../containers/TodoGeneratorContainer';
 
