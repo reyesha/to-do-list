@@ -8,14 +8,14 @@ class TodoList extends Component {
     render() {
         return (
             <div>
-                <h2> TodoList </h2>
+                
                 <BrowserRouter>
                     <span><Link to="/" >go to TodoGenerator</Link></span>
                     <br />
                     <span><Link to="/Todo" >go to TodoList</Link></span>
                     <br />
                     <span><Link to="/done" >go to Done List</Link></span>
-
+                    <h2> TodoList </h2>
                     <Switch>
                         <Route exact path="/" component={TodoGeneratorContainer}></Route>
                         <Route exact path="/Todo" component={TodoGroupContainer}></Route>
