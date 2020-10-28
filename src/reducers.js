@@ -10,6 +10,8 @@ const todos = (state = [], action) => {
         // refactor el to proper name
         state = stateList.filter(el => el.id !== action.payload);
         return state;
+    }else if (action.type === "INIT_TODOS"){
+        return action.payload;
     }
     return state;
 }
