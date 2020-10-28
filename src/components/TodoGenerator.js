@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { addTodo } from '../apis/todos';
+import { Row, Col } from 'antd';
 class TodoGenerator extends Component {
 
     onSubmit = (event) => {
@@ -15,12 +16,18 @@ class TodoGenerator extends Component {
     render() {
         return (
             <div>
+                <Row>
+                <Col span={8}></Col>
+                <Col span={8}>
                 <form onSubmit={this.onSubmit}>
                     <span>
                         <input type="text" placeholder="input a new todo here..." id="todoInput" name="todoInput" />
                         <input type="submit" value="ADD" class="example_a" />
                     </span>
                 </form>
+                </Col>
+                <Col span={8}></Col>
+                </Row>
             </div>
         );
     }
