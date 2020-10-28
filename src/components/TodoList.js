@@ -13,7 +13,7 @@ class TodoList extends Component {
             <div>
                 <Layout>
                     <Header ><h1 style={{color: 'white'}}>TodoList</h1></Header>
-                    <Content>
+                    <Content className="bgWhite">
                         <BrowserRouter>
                             <Menu mode="horizontal">
                                 <Menu.Item key="todo">
@@ -35,7 +35,7 @@ class TodoList extends Component {
                             </Switch>
                         </BrowserRouter>
                     </Content>
-                    <Footer></Footer>
+                    <Footer className="bgWhite"></Footer>
                 </Layout>
 
 

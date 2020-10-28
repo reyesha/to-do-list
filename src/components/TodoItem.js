@@ -17,7 +17,6 @@ class TodoItem extends Component {
     }
 
     toLineThrough = () => {
-        
         // this.props.toggleTodo()
         toggleTodo(this.props.todo).then(response => {
             const doesClick = this.state.strike;
@@ -31,7 +30,7 @@ class TodoItem extends Component {
     render() {
         return (
             <React.Fragment>
-                <li onClick={this.toLineThrough} style={{ textDecoration: this.state.strike ? 'line-through' : 'none' }} className="todoList">{this.props.todo.text}<span className="close" onClick={() => this.deleteToDo(this.props.todo.id)}>&times;</span></li>
+                <li onClick={this.toLineThrough} style={{ textDecoration: this.props.todo.done ? 'line-through' : 'none' }} className="todoList">{this.props.todo.text}<span className="close" onClick={() => this.deleteToDo(this.props.todo.id)}>&times;</span></li>
             </React.Fragment>
         );
     }
