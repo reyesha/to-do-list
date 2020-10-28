@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { deleteTodo } from '../apis/todos';
 
 class TodoItem extends Component {
     constructor(props) {
@@ -10,9 +11,12 @@ class TodoItem extends Component {
     }
 
     deleteToDo = (todoId) => {
-        console.log(todoId)
-        this.props.deleteToDo(todoId);
+        deleteTodo(todoId).then(response => {
+            // debugger;
+            this.props.deleteToDo(response.data.id);
+        })
     }
+
     toLineThrough = () => {
         const doesClick = this.state.strike;
         this.setState({ strike: !doesClick });
