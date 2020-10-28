@@ -5,6 +5,7 @@ import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 import NotFound from './NotFound';
 import DoneListContainer from '../containers/DoneListContainer';
 import { Menu, Layout } from 'antd';
+import { UnorderedListOutlined, CheckSquareOutlined, PlusOutlined } from '@ant-design/icons';
 
 class TodoList extends Component {
     render() {
@@ -16,13 +17,13 @@ class TodoList extends Component {
                     <Content className="bgWhite">
                         <BrowserRouter>
                             <Menu mode="horizontal">
-                                <Menu.Item key="todo">
+                                <Menu.Item key="todo" icon={<PlusOutlined />}>
                                     <Link to="/" >Todo Generator</Link>
                                 </Menu.Item>
-                                <Menu.Item key="all">
+                                <Menu.Item key="all" icon={<UnorderedListOutlined />}>
                                     <Link to="/Todo" >Todos</Link>
                                 </Menu.Item>
-                                <Menu.Item key="done">
+                                <Menu.Item key="done" icon={<CheckSquareOutlined />}>
                                     <Link to="/done" >Done</Link>
                                 </Menu.Item>
                             </Menu>
