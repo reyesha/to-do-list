@@ -38,7 +38,7 @@ ul {
   margin: 0;
 }
 
-ul li {
+.todoList {
   border: 1px solid #ddd;
   margin-top: -1px;
   background-color: #f6f6f6;

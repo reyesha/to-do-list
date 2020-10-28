@@ -1,8 +1,9 @@
+import { Menu } from 'antd';
 import './App.css';
 import TodoList from './components/TodoList';
 import { getTodos } from './apis/todos';
 import React from 'react';
-import { connect }from 'react-redux'
+import { connect } from 'react-redux'
 import { initTodos } from './actions';
 
 class App extends React.Component {
@@ -15,15 +16,15 @@ class App extends React.Component {
   }
 
   render() {
+    
     return (
-      <div className="App">
-        <header className="App-header">
-          <TodoList />
-        </header>
+      <div>
+        <TodoList />
       </div>
+      
     );
   }
-  
+
 
 
 }
@@ -33,4 +34,4 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
-export default connect (null, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
