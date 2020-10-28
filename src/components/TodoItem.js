@@ -8,23 +8,23 @@ class TodoItem extends Component {
             strike: false
         }
     }
-    
+
     deleteToDo = (todoId) => {
         console.log(todoId)
         this.props.deleteToDo(todoId);
     }
     toLineThrough = () => {
         const doesClick = this.state.strike;
-        this.setState({strike: !doesClick});
+        this.setState({ strike: !doesClick });
     }
 
+    // replace style as a className
+    // refactor all class into className
     render() {
         return (
-            <div>
-                <ul>
-                    <li onClick={this.toLineThrough} style={{textDecoration: this.state.strike ? 'line-through': 'none'}}>{this.props.todo.text}<span class="close" onClick={() => this.deleteToDo(this.props.todo.id)}>&times;</span></li>
-                </ul>
-            </div>
+            <React.Fragment>
+                <li onClick={this.toLineThrough} style={{ textDecoration: this.state.strike ? 'line-through' : 'none' }}>{this.props.todo.text}<span class="close" onClick={() => this.deleteToDo(this.props.todo.id)}>&times;</span></li>
+            </React.Fragment>
         );
     }
 }
