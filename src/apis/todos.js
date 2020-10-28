@@ -10,3 +10,7 @@ export const addTodo = text => api.post('/todos', {
 })
 
 export const deleteTodo = id => api.delete(`/todos/${id}`)
+
+export const toggleTodo = ({id, done}) => api.put(`/todos/${id}`, {
+    done: !done
+})

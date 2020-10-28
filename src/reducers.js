@@ -12,6 +12,8 @@ const todos = (state = [], action) => {
         return state;
     }else if (action.type === "INIT_TODOS"){
         return action.payload;
+    }else if(action.type === "TOGGLE_TODO"){
+        return state.map(todo => todo.id === action.payload ? {...todo, done: !todo.done} : todo);
     }
     return state;
 }

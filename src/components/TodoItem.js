@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { deleteTodo } from '../apis/todos';
+import { deleteTodo, toggleTodo } from '../apis/todos';
 
 class TodoItem extends Component {
     constructor(props) {
@@ -17,8 +17,13 @@ class TodoItem extends Component {
     }
 
     toLineThrough = () => {
-        const doesClick = this.state.strike;
-        this.setState({ strike: !doesClick });
+        
+        // this.props.toggleTodo()
+        toggleTodo(this.props.todo).then(response => {
+            const doesClick = this.state.strike;
+            this.setState({ strike: !doesClick });
+            this.props.toggleTodo(response.data.id);
+        })
     }
 
     // replace style as a className
@@ -26,7 +31,7 @@ class TodoItem extends Component {
     render() {
         return (
             <React.Fragment>
-                <li onClick={this.toLineThrough} style={{ textDecoration: this.state.strike ? 'line-through' : 'none' }}>{this.props.todo.text}<span class="close" onClick={() => this.deleteToDo(this.props.todo.id)}>&times;</span></li>
+                <li onClick={this.toLineThrough} style={{ textDecoration: this.state.strike ? 'line-through' : 'none' }}>{this.props.todo.text}<span className="close" onClick={() => this.deleteToDo(this.props.todo.id)}>&times;</span></li>
             </React.Fragment>
         );
     }

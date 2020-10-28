@@ -10,3 +10,7 @@ export const deleteToDo = (todoId) => {
 export const initTodos = (todos) => {
     return {type: "INIT_TODOS", payload: todos}
 }
+
+export const toggleTodo = (todoId) => {
+    return {type: "TOGGLE_TODO", payload: todoId}
+}
