@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import { addTodo } from '../apis/todos';
 class TodoGenerator extends Component {
 
     onSubmit = (event) => {
         event.preventDefault();
         const text = event.target.todoInput.value;
-        const id = uuidv4();
-        const todo = { text: text };
-
 
         addTodo(text).then(response => {
-            this.props.addTodo(todo);
+            this.props.addTodo(response.data);
             event.target.todoInput.value = '';
         })
     }

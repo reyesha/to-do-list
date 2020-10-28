@@ -12,7 +12,6 @@ class TodoItem extends Component {
 
     deleteToDo = (todoId) => {
         deleteTodo(todoId).then(response => {
-            // debugger;
             this.props.deleteToDo(response.data.id);
         })
     }
