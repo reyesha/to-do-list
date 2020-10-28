@@ -12,7 +12,7 @@ class TodoList extends Component {
         return (
             <div>
                 <Layout>
-                    <Header>TodoList</Header>
+                    <Header ><h1 style={{color: 'white'}}>TodoList</h1></Header>
                     <Content>
                         <BrowserRouter>
                             <Menu mode="horizontal">
