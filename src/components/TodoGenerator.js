@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { addTodo } from '../apis/todos';
 import { Row, Col } from 'antd';
-import { Form, Input, Button, Checkbox } from 'antd';
-import { validate } from 'uuid';
-import { FormInstance } from 'antd/lib/form';
+import { Form, Input, Button } from 'antd';
 
 class TodoGenerator extends Component {
 

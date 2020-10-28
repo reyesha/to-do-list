@@ -1,4 +1,3 @@
-import { Menu } from 'antd';
 import './App.css';
 import TodoList from './components/TodoList';
 import { getTodos } from './apis/todos';

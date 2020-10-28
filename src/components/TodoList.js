@@ -9,7 +9,7 @@ import { UnorderedListOutlined, CheckSquareOutlined, PlusOutlined } from '@ant-d
 
 class TodoList extends Component {
     render() {
-        const { Header, Footer, Sider, Content } = Layout;
+        const { Header, Footer, Content } = Layout;
         return (
             <div>
                 <Layout>
