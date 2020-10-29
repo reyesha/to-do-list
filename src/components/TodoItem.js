@@ -12,8 +12,8 @@ class TodoItem extends Component {
     }
 
     deleteToDo = (todoId) => {
-        deleteTodo(todoId).then(response => {
-            this.props.deleteToDo(response.data.id);
+        deleteTodo(todoId).then(()=> {
+            this.props.deleteToDo(todoId);
         })
     }
 
@@ -34,7 +34,7 @@ class TodoItem extends Component {
                 <Row>
                     <Col span={8}></Col>
                     <Col span={8}>
-                        <li onClick={this.toLineThrough} style={{ textDecoration: this.props.todo.done ? 'line-through' : 'none' }} className="todoList">{this.props.todo.todoItem}<span className="close" onClick={() => this.deleteToDo(this.props.todo.id)}>&times;</span></li>
+                        <li onClick={this.toLineThrough} style={{ textDecoration: this.props.todo.done ? 'line-through' : 'none' }} className="todoList">{this.props.todo.todoItem}</li><span className="close" onClick={() => this.deleteToDo(this.props.todo.id)}>&times;</span>
                     </Col>
                     <Col span={8}></Col>
                 </Row>

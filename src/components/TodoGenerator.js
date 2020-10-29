@@ -9,11 +9,11 @@ class TodoGenerator extends Component {
     
     
     onSubmit = (values) => {
-        const text = values.text;
+        const todoItem = values.text;
         this.formRef.current.resetFields()
 
 
-        addTodo(text).then(response => {
+        addTodo(todoItem).then(response => {
             this.props.addTodo(response.data);
         })
     }

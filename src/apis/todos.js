@@ -5,8 +5,8 @@ export const getTodos = () => {
     return api.get('todos')
 }
 
-export const addTodo = text => api.post('/todos', {
-    text
+export const addTodo = todoItem => api.post('/todos', {
+    todoItem
 })
 
 export const deleteTodo = id => api.delete(`/todos/${id}`)
