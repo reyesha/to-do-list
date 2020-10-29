@@ -34,7 +34,7 @@ class TodoItem extends Component {
                 <Row>
                     <Col span={8}></Col>
                     <Col span={8}>
-                        <li onClick={this.toLineThrough} style={{ textDecoration: this.props.todo.done ? 'line-through' : 'none' }} className="todoList">{this.props.todo.text}<span className="close" onClick={() => this.deleteToDo(this.props.todo.id)}>&times;</span></li>
+                        <li onClick={this.toLineThrough} style={{ textDecoration: this.props.todo.done ? 'line-through' : 'none' }} className="todoList">{this.props.todo.todoItem}<span className="close" onClick={() => this.deleteToDo(this.props.todo.id)}>&times;</span></li>
                     </Col>
                     <Col span={8}></Col>
                 </Row>
