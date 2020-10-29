@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { deleteTodo, toggleTodo } from '../apis/todos';
+import { Row, Col } from 'antd';
 
 class TodoItem extends Component {
     constructor(props) {
@@ -30,7 +31,13 @@ class TodoItem extends Component {
     render() {
         return (
             <React.Fragment>
-                <li onClick={this.toLineThrough} style={{ textDecoration: this.props.todo.done ? 'line-through' : 'none' }} className="todoList">{this.props.todo.text}<span className="close" onClick={() => this.deleteToDo(this.props.todo.id)}>&times;</span></li>
+                <Row>
+                    <Col span={8}></Col>
+                    <Col span={8}>
+                        <li onClick={this.toLineThrough} style={{ textDecoration: this.props.todo.done ? 'line-through' : 'none' }} className="todoList">{this.props.todo.text}<span className="close" onClick={() => this.deleteToDo(this.props.todo.id)}>&times;</span></li>
+                    </Col>
+                    <Col span={8}></Col>
+                </Row>
             </React.Fragment>
         );
     }
